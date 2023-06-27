@@ -11,7 +11,7 @@ import csv
 scope=["https://www.googleapis.com/auth/spreadsheets",
       "https://www.googleapis.com/auth/drive"]
 
-credentials=ServiceAccountCredentials.from_json_keyfile_name('python-tutuorial-9f237db21e53.json',scope)
+credentials=ServiceAccountCredentials.from_json_keyfile_name('credentials.json',scope)
 client =gspread.authorize(credentials)
 
 # to create a file 
@@ -19,7 +19,7 @@ client =gspread.authorize(credentials)
 
 #to show in your email do the 2 down steps 
 # sheet=client.create("firstshet")
-# sheet.share("patrickbateman19195@gmail.com",perm_type='user',role='writer')
+# sheet.share("myemail@gmail.com",perm_type='user',role='writer')
 sheet=client.open("firstshet").sheet1
 
 df=pd.read_csv("california_housing_test.csv")
